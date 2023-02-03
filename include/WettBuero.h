@@ -1,7 +1,7 @@
 /******************************************************************************
  * 
- *   @file:  Schnecke.h
- *   @brief:  Schnecke header file
+ *   @file:  WettBuero.h
+ *   @brief:  Wettbuero header file
  *   Website:  
  *   Support email:  
  * 
@@ -12,6 +12,8 @@
 #pragma once
 
 #include <iostream>
+#include <vector>
+#include "Rennen.h"
 
 using namespace std;
 
@@ -31,37 +33,32 @@ using namespace std;
 //                            Functions
 // ============================================================================
 
-class Schnecke
+class WettBuero
 {
     private:
     
     
     public:
-        string name;
-        string rasse;
-        double maximalGeschwindigkeit;
-        double strecke;
+        Rennen rennen;
+        vector<int> Wetten;
+        int faktor=5;
         /**
          * Leerer Konstruktor
          * **/
-        Schnecke();
+        WettBuero()
+        {
 
+        }
 /**
  * Konstruktor der Klasse, weist den Variablen Startwerte zu
  *
- * @param   string Name der Schnecke
- * @param   string Rasse der Schnecke
- * @param   double Maximalgeschwindigkeit
+ * @param   string Name des Wettbüros
+ * @param   int Faktor, der die Gewinne berechnet
  *
  * 
  */
-        Schnecke(string, string, double);
-/**
- * Lässt die Schnecke eine zufällige Strecke kriechen. Zeiteinheit=1. Die Strecke darf nicht größer werden als die Maximalgeschwindigkeit es erlaubt
- *
- * @return  void    
- */
-        void krieche();
+        WettBuero(string,int);
+
         string toString();
 };
 

@@ -3,6 +3,8 @@
 
 using namespace std;
 
+Schnecke::Schnecke()
+{}
 Schnecke::Schnecke(string name, string rasse, double maximalGeschwindigkeit)
 {
     if(name.length()<1)
